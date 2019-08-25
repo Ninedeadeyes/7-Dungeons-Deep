@@ -6,7 +6,7 @@ import random
 import time
 import winsound
 
-# intro screen
+
 
 images=[".\\art\\wall.gif",".\\art\\orkleft.gif",".\\art\\ork.gif",".\\art\\orkup.gif",".\\art\\gold.gif",".\\art\\fire.gif",".\\art\\door.gif",".\\art\\orkright.gif",".\\art\\arrowup.gif",
         ".\\art\\arrowdown.gif",".\\art\\arrowright.gif",".\\art\\arrowleft.gif",".\\art\\heroleft.gif",".\\art\\heroright.gif",".\\art\\herodown.gif",".\\art\\heroup.gif",".\\art\\fire.gif",
@@ -18,6 +18,9 @@ images=[".\\art\\wall.gif",".\\art\\orkleft.gif",".\\art\\ork.gif",".\\art\\orku
 for image in images:
     turtle.register_shape(image)
 
+
+#intro screen
+#------------------------------
 pn= turtle.Screen()
 winsound.PlaySound(".\\sound\\intro.wav", winsound.SND_ASYNC)
 pn.bgcolor("black")
@@ -45,6 +48,8 @@ pn.tracer(0)
 pn.clear()
 tn.clear()
 
+
+#main screen 
 #---------------------------------------------------------
 
 
@@ -169,7 +174,7 @@ class Info():
     def win(self):
 
         
-        if player.kill==0:
+        if player.kill==0:    # If player does not kill anything is given an alternative ending 
 
             msg= (""" 
             You found the Crown of Yendor.
@@ -2233,8 +2238,6 @@ while True:
                 setup_maze(levels[8])
                 maze=("level8")
             
-            
-        
                    
             else:
                 pass
