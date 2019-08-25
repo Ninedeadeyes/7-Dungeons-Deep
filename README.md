@@ -14,5 +14,5 @@ Key features
 
 -Alternative ending 
 
-(Still need to clean up the code but aside from that it is pretty much done) 
+(Still need to clean up the code and label things correctly as well provide additional comments but aside from that the game is basically done ) 
 
