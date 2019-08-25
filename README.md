@@ -22,4 +22,9 @@ Key features
 
 -To play without python download all files and run the exe file.
 
+- Video
+
+https://www.youtube.com/watch?v=Jmmdnoz2X-w&t=21s
+
+
 -Special Thanks to Christian Thompson ( Youtuber)
