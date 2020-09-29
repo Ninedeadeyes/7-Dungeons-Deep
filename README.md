@@ -1,4 +1,8 @@
 
+29/09/2020
+
+Attempting to modulise the game. Originally all code is within game.py but hopefully we will be able to seperate the code to different modules. (Work in progress ) 
+
 
 Key features
 
