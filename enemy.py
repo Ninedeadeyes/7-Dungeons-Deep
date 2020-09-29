@@ -78,7 +78,7 @@ class Enemy(turtle.Turtle):
         else:
             self.direction=random.choice(["up","down","left", "right"])
 
-        turtle.ontimer(self.move(block,bob),t=random.randint(100,300))
+        turtle.ontimer(lambda: self.move(block,bob),t=random.randint(100,300)) 
 
 
     def destroy(self):
@@ -166,7 +166,7 @@ class Enemy2(Enemy):
         else:
             self.direction=random.choice(["up","down","left", "right"])
 
-        turtle.ontimer(self.move(block,bob),t=random.randint(100,300))
+        turtle.ontimer(lambda: self.move(block,bob),t=random.randint(100,300)) 
 
 class Enemy3(Enemy):
     def __init__(self,x,y):
@@ -246,7 +246,7 @@ class Enemy3(Enemy):
         else:
             self.direction=random.choice(["up","down","left", "right"])
 
-        turtle.ontimer(self.move(block,bob),t=random.randint(100,300))
+        turtle.ontimer(lambda: self.move(block,bob),t=random.randint(100,300)) 
 
 class Enemy4(Enemy):
     def __init__(self,x,y):
@@ -326,4 +326,4 @@ class Enemy4(Enemy):
         else:
             self.direction=random.choice(["up","down","left", "right"])
 
-        turtle.ontimer(self.move(block,bob),t=random.randint(100,300))
+        turtle.ontimer(lambda: self.move(block,bob),t=random.randint(100,300)) 
