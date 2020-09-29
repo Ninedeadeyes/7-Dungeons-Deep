@@ -75,7 +75,6 @@ class Enemy(turtle.Turtle):
         if (move_to_x, move_to_y) not in block:
             self.goto(move_to_x, move_to_y)
 
-            turtle.ontimer(self.move(block,bob),t=1000)
         else:
             self.direction=random.choice(["up","down","left", "right"])
 
