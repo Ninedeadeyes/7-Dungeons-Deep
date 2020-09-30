@@ -4,7 +4,7 @@ import math
 
 
 class Enemy(turtle.Turtle):
-    def __init__(self,x,y):
+    def __init__(self,x,y,block,bob):
         turtle.Turtle.__init__(self)
         self.shape(".\\art\\orkleft.gif")
         self.color("red")
@@ -89,7 +89,7 @@ class Enemy(turtle.Turtle):
 
 
 class Enemy2(Enemy):
-    def __init__(self,x,y):
+    def __init__(self,x,y,block,bob):
         turtle.Turtle.__init__(self)
         self.shape(".\\art\\zombiedown.gif")
         self.color("red")
@@ -169,7 +169,7 @@ class Enemy2(Enemy):
         turtle.ontimer(lambda: self.move(block,bob),t=random.randint(100,300)) 
 
 class Enemy3(Enemy):
-    def __init__(self,x,y):
+    def __init__(self,x,y,block,bob):
         turtle.Turtle.__init__(self)
         self.shape(".\\art\\bossdown.gif")
         self.color("red")
@@ -249,7 +249,7 @@ class Enemy3(Enemy):
         turtle.ontimer(lambda: self.move(block,bob),t=random.randint(100,300)) 
 
 class Enemy4(Enemy):
-    def __init__(self,x,y):
+    def __init__(self,x,y,block,bob):
         turtle.Turtle.__init__(self)
         self.shape(".\\art\\ghost.gif")
         self.color("red")
