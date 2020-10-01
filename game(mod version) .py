@@ -1,7 +1,7 @@
+from player import*
 from proj import*
 from info import*
 from images import images
-from keybinding import keybinding
 from maps import*
 from intro import*
 from item import*
@@ -27,300 +27,6 @@ wn.setup(1900,930)
 wn.bgpic(".\\art\\background.gif")
 wn.tracer(0)
 
-class Player(turtle.Turtle):
-    def __init__(self):
-        turtle.Turtle.__init__(self)
-        self.shape(".\\art\\heroright.gif")
-        self.penup()
-        self.speed()
-        self.fd(0)
-        self.right=1
-        self.left=0
-        self.up=0
-        self.down=0
-        self.kill=0
-
-    def headright(self):
-
-        if self.right==1:
-            pass
-
-        if self.down==1:
-            self.rt(270)
-            self.down=0
-            self.right=1         
-            
-        if self.left==1:
-            self.rt(180)
-            self.left=0
-            self.right=1
-
-        if self.up==1:
-            self.rt(90)
-            self.up=0
-            self.right=1
-
-        self.shape(".\\art\\heroright.gif")
-        missile.shape(".\\art\\arrowright.gif")
-        missile.fire(player,lives)
-
-
-    def headdown(self):
-
-        if self.down==1:
-            pass
-
-        if self.left==1:
-            
-            self.rt(270)
-            self.left=0
-            self.down=1
-
-
-        if self.up==1:
-            
-            self.rt(180)
-            self.up=0
-            self.down=1
-    
-        if self.right==1:
-            
-            self.rt(90)
-            self.right=0
-            self.down=1
-
-        self.shape(".\\art\\herodown.gif")
-        missile.shape(".\\art\\arrowdown.gif")
-        missile.fire(player,lives)
-
-    def headleft(self):
-
-        if self.left==1:
-            pass
-
-        if self.up==1:
-            
-            self.rt(270)
-            self.up=0
-            self.left=1
-
-        if self.right==1:
-            
-            self.rt(180)
-            self.right=0
-            self.left=1
-
-        if self.down==1:
-            
-            self.rt(90)
-            self.down=0
-            self.left=1
-
-        self.shape(".\\art\\heroleft.gif")
-        missile.shape(".\\art\\arrowleft.gif")
-        missile.fire(player,lives)
-            
-    def headup(self):
-          
-        if self.up==1:
-            pass
-
-        if self.right==1:
-            
-            self.rt(270)
-            self.right=0
-            self.up=1
-
-        if self.down==1:
-            
-            self.rt(180)
-            self.down=0
-            self.up=1
-
-        if self.left==1:
-            
-            self.rt(90)
-            self.left=0
-            self.up=1
-            
-        self.shape(".\\art\\heroup.gif")
-        missile.shape(".\\art\\arrowup.gif")
-        missile.fire(player,lives)
- 
-
-    def go_up(self):
-
-        if self.up==1:
-            pass
-
-        if self.right==1:
-            
-            self.rt(270)
-            self.right=0
-            self.up=1
-
-        if self.down==1:
-            
-            self.rt(180)
-            self.down=0
-            self.up=1
-
-        if self.left==1:
-            
-            self.rt(90)
-            self.left=0
-            self.up=1
-
-        move_to_x = self.xcor()
-        move_to_y = self.ycor()+24
-
-        self.shape(".\\art\\heroup.gif")
-
-        
-        if (move_to_x, move_to_y) not in walls:
-            self.goto(move_to_x, move_to_y)
-            
-
-    def go_down(self):
-
-        if self.down==1:
-            pass
-
-        if self.left==1:
-            
-            self.rt(270)
-            self.left=0
-            self.down=1
-
-
-        if self.up==1:
-            
-            self.rt(180)
-            self.up=0
-            self.down=1
-    
-        if self.right==1:
-            
-            self.rt(90)
-            self.right=0
-            self.down=1
-        
-        move_to_x = self.xcor()
-        move_to_y = self.ycor()-24
-        self.shape(".\\art\\herodown.gif")
-        
-        if (move_to_x, move_to_y) not in walls:
-            self.goto(move_to_x, move_to_y)
-        
-        
-    def go_left(self):
-
-        if self.left==1:
-            pass
-
-        if self.up==1:
-            
-            self.rt(270)
-            self.up=0
-            self.left=1
-
-        if self.right==1:
-            
-            self.rt(180)
-            self.right=0
-            self.left=1
-
-        if self.down==1:
-            
-            self.rt(90)
-            self.down=0
-            self.left=1
-            
-        move_to_x = self.xcor()-24
-        move_to_y = self.ycor()
-        self.shape(".\\art\\heroleft.gif")
-        
-        if (move_to_x, move_to_y) not in walls :
-            self.goto(move_to_x, move_to_y)
-        
-    def go_right(self):
-
-        if self.right==1:
-            pass
-
-        if self.down==1:
-            self.rt(270)
-            self.down=0
-            self.right=1         
-            
-        if self.left==1:
-            self.rt(180)
-            self.left=0
-            self.right=1
-
-        if self.up==1:
-            self.rt(90)
-            self.up=0
-            self.right=1
-        
-        move_to_x = player.xcor()+24
-        move_to_y = player.ycor()
-
-
-        if (move_to_x, move_to_y) not in walls:
-            self.goto(move_to_x, move_to_y)
-        
-        self.shape(".\\art\\heroright.gif")
-
-          
-    def drink(self):
-        
-        if info.potion>0 and info.hp is not info.fullhp : 
-            info.potion-=1
-            info.show_healthpotion()
-
-            if info.hp < info.fullhp-300:
-                info.hp+=300
-                info.show_health()
-            else:
-                info.hp=info.fullhp
-                info.show_health()
-        else:
-            pass
-            
-    def fireball(self):
-        if info.fire_scroll>0:
-            info.fire_scroll-=1
-            info.show_fire_scroll()
-            missile2.fire(player,lives)
-            
-        else:
-            pass
-                 
-
-    def is_collision(self,other):
-        a = self.xcor()- other.xcor()
-        b = self.ycor()- other.ycor()
-        distance = math.sqrt ((a ** 2)+(b ** 2) )
-
-        if distance < 10:
-            return True
-        else:
-            return False
-
-    def is_collision2(self,other):
-        a = self.xcor()- other.xcor()
-        b = self.ycor()- other.ycor()
-        distance = math.sqrt ((a ** 2)+(b ** 2) )
-
-        if distance < 50:
-            return True
-        else:
-            return False
-
-    def destroy(self):
-        self.goto(500,500)
-        self.hideturtle()
 
 class Enemy(Item):   # only purpose to inherit destroy function from Item
     def __init__(self,x,y):
@@ -811,8 +517,38 @@ info.show_exp()
 info.show_defense()
 
 #keyboard binding
+turtle.listen(player)
+a=turtle.onkey(player.go_left(walls), "Left")
+b=turtle.onkey(player.go_right(walls), "Right")
+c=turtle.onkey(player.go_up(walls), "Up")
+d=turtle.onkey(player.go_down(walls), "Down")
+e=turtle.onkey(player.headright(missile,lives), "d")
+f=turtle.onkey(player.headleft(missile,lives), "a")
+g=turtle.onkey(player.headdown(missile,lives),"s")
+h=turtle.onkey(player.headup(missile,lives),"w")
+i=turtle.onkey(player.headright(missile,lives),"D")
+j=turtle.onkey(player.headleft(missile,lives), "A")
+k=turtle.onkey(player.headdown(missile,lives),"S")
+l=turtle.onkey(player.headup(missile,lives),"W")
+o=turtle.onkey(player.drink(info),"space")
+m=turtle.onkey(player.fireball(missile2,info,lives),"z")
+n=turtle.onkey(player.fireball(missile2,info,lives),"Z")
 
-keybinding(player)
+a,("Left")
+b,("Right")
+c,("Up")
+d,("Down")
+e,("d")
+f,("a")
+g,("s")
+h,("w")
+i,("D")
+j,("A")
+k,("S")
+l,("W")
+o,("space")
+m,("z")
+n,("Z")
 
 for enemy in enemies:
     turtle.ontimer(enemy.move,t=250)
