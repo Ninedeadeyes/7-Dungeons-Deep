@@ -8,7 +8,7 @@ level_1 =[
 "G  R                         G",
 "G  GGG    G GG     R         G",
 "G                            G",
-"G GG   GG        M     GG    G",
+"G GG   GG              GG    G",
 "G          G           G     G",
 "G  GG      GGG               G",
 "G  GG G          G  GGG      G",
