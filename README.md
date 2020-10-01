@@ -1,7 +1,7 @@
 
 29/09/2020
 
-Attempting to modulise the game. Originally all code is within game.py but hopefully we will be able to seperate the code to different modules. (Work in progress ) 
+Attempting to modularize the game. Originally all code is within game.py but hopefully we will be able to seperate the code to different modules. (Work in progress ) 
 
 Even though Enemies can be modulated with  turtle.ontimer(lambda: self.move(block,bob),t=random.randint(100,300))
 
