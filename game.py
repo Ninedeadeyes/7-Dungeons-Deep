@@ -470,8 +470,8 @@ class Missile(turtle.Turtle):
             self.goto(player.xcor(), player.ycor())
             self.setheading(player.heading())
             self.status = "firing"
-            if lives != 3:
-                winsound.PlaySound(".\\sound\\swing.wav", winsound.SND_ASYNC)
+            if lives != 3:                # prevent annoying ending sound bug 
+                winsound.PlaySound(".\\sound\\swing.wav", winsound.SND_ASYNC)   
 
 
            
@@ -798,7 +798,7 @@ class Player(turtle.Turtle):
         move_to_y = self.ycor()-24
         self.shape(".\\art\\herodown.gif")
         
-        if (move_to_x, move_to_y) not in walls and npcs:
+        if (move_to_x, move_to_y) not in walls:
             self.goto(move_to_x, move_to_y)
         
         
@@ -936,7 +936,7 @@ class Item(turtle.Turtle):
 
 
 
-class Crown(Item):
+class Crown(Item):                     # just to inherit 'destroy' function from Item to be honest 
     def __init__(self,x,y):
         turtle.Turtle.__init__(self)
         self.shape(".\\art\\crown.gif")
@@ -2011,7 +2011,7 @@ while True:
             player.destroy()
             crown.destroy()
             crowns.remove(crown)
-            lives=3
+            lives=3             # prevent annoying ending bug where you can hear attack button. 
             game.win()
             
             
