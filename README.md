@@ -7,12 +7,7 @@ Even though Enemies can be modulated with  turtle.ontimer(lambda: self.move(bloc
 
 it has impacted performance way too much for me to be happy. 
 
-The issue i had with modulating 'Player' Class you can only provide the turtle onkey function with no augment but because you are modulating, 
-these need to be added.
-
-I have uploaded both the Player and Enemy modules and respective game file within misc for anyone who fancy to attempt it. 
-
-If anyone can help modulate 'Player' class or/and Enemy Class without effecting performance, it would be appreciative  
+If anyone can help modulate Enemy Class without effecting performance, it would be appreciative  
 
 Key features
 
