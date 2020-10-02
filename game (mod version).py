@@ -518,7 +518,8 @@ info.show_fire_scroll()
 info.show_exp()
 info.show_defense()
 
-#keyboard binding
+#keyboard binding, onkey only takes 1 augment so to get around this we use lambda which will create a function within the function so it express as only 1 augement. 
+
 turtle.listen()
 turtle.onkey((lambda:player.go_left(walls)), "Left")
 turtle.onkey((lambda:player.go_right(walls)), "Right")
