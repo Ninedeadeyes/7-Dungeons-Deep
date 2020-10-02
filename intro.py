@@ -4,7 +4,7 @@ import time
 
 
 
-def intro(): 
+def Intro(): 
 
     pn= turtle.Screen()
     winsound.PlaySound(".\\sound\\intro.wav", winsound.SND_ASYNC)

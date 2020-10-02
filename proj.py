@@ -29,7 +29,7 @@ class Missile(turtle.Turtle):
         b = self.ycor()- other.ycor()
         distance = math.sqrt ((a ** 2)+(b ** 2) )
 
-        if distance >25:
+        if distance >22:
             return True
         else:
             return False
