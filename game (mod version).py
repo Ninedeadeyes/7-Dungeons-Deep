@@ -8,6 +8,7 @@ from item import*
 import turtle
 import math
 import random
+import time
 import winsound
 
 for image in Images:
