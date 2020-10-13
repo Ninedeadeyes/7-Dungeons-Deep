@@ -68,9 +68,6 @@ class Enemy(Item):
         elif self.direction == Direction.right:
             dx = 24
             dy = 0
-        else:
-            dx = 0
-            dy = 0
 
         # Calculate the spot to move to 
         move_to_x = self.xcor() + dx
