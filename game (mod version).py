@@ -2,6 +2,7 @@ from player import Player
 from proj import Missile,Missile2
 from info import Info,Pen
 from images import Images
+from direction import Direction
 from maps import*
 from intro import Intro
 from item import*
@@ -39,7 +40,7 @@ class Enemy(Item):   # only purpose to inherit destroy function from Item
         self.speed(0)
         self.boss=0
         self.goto(x,y)
-        self.direction=random.choice(["up","down","left","right"])
+        self.direction = Direction.random()
         self.hp=30
         self.damage=15
         self.alive = True
@@ -55,22 +56,22 @@ class Enemy(Item):   # only purpose to inherit destroy function from Item
             return False
 
     def move(self):
-        if self.direction =="up":
+        if self.direction == Direction.up:
             dx= 0
             dy= 24
             self.shape(".\\art\\orkup.gif")
             
-        elif self.direction =="down":
+        elif self.direction == Direction.down:
             dx= 0
             dy= -24
             self.shape(".\\art\\ork.gif")
           
-        elif self.direction =="left":
+        elif self.direction == Direction.left:
             dx= -24
             dy= 0
             self.shape(".\\art\\orkleft.gif")
 
-        elif self.direction =="right":
+        elif self.direction == Direction.right:
             dx= 24
             dy= 0
             self.shape(".\\art\\orkright.gif")
@@ -82,16 +83,16 @@ class Enemy(Item):   # only purpose to inherit destroy function from Item
 
         if self.is_close(player):
             if player.xcor()<self.xcor():
-                self.direction="left"
+                self.direction = Direction.left
 
             elif player.xcor()>self.xcor():
-                self.direction="right"
+                self.direction = Direction.right
 
             elif player.ycor()<self.ycor():
-                self.direction="down"
+                self.direction = Direction.down
 
             elif player.ycor()>self.ycor():
-                self.direction="up"
+                self.direction = Direction.up
                                                                         
             
         # Calculate the spot to move to 
@@ -101,7 +102,7 @@ class Enemy(Item):   # only purpose to inherit destroy function from Item
         if (move_to_x, move_to_y) not in walls:
             self.goto(move_to_x, move_to_y)
         else:
-            self.direction=random.choice(["up","down","left", "right"])
+            self.direction = Direction.random()
 
         turtle.ontimer(self.move,t=random.randint(100,300))
 
@@ -115,7 +116,7 @@ class Enemy2(Enemy):
         self.exp= 10
         self.speed(0)
         self.goto(x,y)
-        self.direction=random.choice(["up","down","left","right"])
+        self.direction = Direction.random()
         self.hp=70
         self.damage=30
         self.boss=0
@@ -132,25 +133,25 @@ class Enemy2(Enemy):
             return False
 
     def move(self):
-        if self.direction =="up":
+        if self.direction == Direction.up:
             dx= 0
             dy= 24
             self.shape(".\\art\\zombieup.gif")
             
             
-        elif self.direction =="down":
+        elif self.direction == Direction.down:
             dx= 0
             dy= -24
             self.shape(".\\art\\zombiedown.gif")
             
           
-        elif self.direction =="left":
+        elif self.direction == Direction.left:
             dx= -24
             dy= 0
             self.shape(".\\art\\zombieleft.gif")
             
 
-        elif self.direction =="right":
+        elif self.direction == Direction.right:
             dx= 24
             dy= 0
             self.shape(".\\art\\zombieright.gif")
@@ -163,16 +164,16 @@ class Enemy2(Enemy):
 
         if self.is_close(player):
             if player.xcor()<self.xcor():
-                self.direction="left"
+                self.direction = Direction.left
 
             elif player.xcor()>self.xcor():
-                self.direction="right"
+                self.direction = Direction.right
 
             elif player.ycor()<self.ycor():
-                self.direction="down"
+                self.direction = Direction.down
 
             elif player.ycor()>self.ycor():
-                self.direction="up"
+                self.direction = Direction.up
                                                                         
             
         # Calculate the spot to move to 
@@ -182,7 +183,7 @@ class Enemy2(Enemy):
         if (move_to_x, move_to_y) not in walls:
             self.goto(move_to_x, move_to_y)
         else:
-            self.direction=random.choice(["up","down","left", "right"])
+            self.direction = Direction.random()
 
         turtle.ontimer(self.move,t=random.randint(100,200))
 
@@ -195,7 +196,7 @@ class Enemy3(Enemy):
         self.exp= 200
         self.speed(0)
         self.goto(x,y)
-        self.direction=random.choice(["up","down","left","right"])
+        self.direction = Direction.random()
         self.hp=8000
         self.damage=80
         self.boss=1
@@ -212,25 +213,25 @@ class Enemy3(Enemy):
             return False
 
     def move(self):
-        if self.direction =="up":
+        if self.direction == Direction.up:
             dx= 0
             dy= 24
             self.shape(".\\art\\bossup.gif")
             
             
-        elif self.direction =="down":
+        elif self.direction == Direction.down:
             dx= 0
             dy= -24
             self.shape(".\\art\\bossdown.gif")
             
           
-        elif self.direction =="left":
+        elif self.direction == Direction.left:
             dx= -24
             dy= 0
             self.shape(".\\art\\bossleft.gif")
             
 
-        elif self.direction =="right":
+        elif self.direction == Direction.right:
             dx= 24
             dy= 0
             self.shape(".\\art\\bossright.gif")
@@ -243,16 +244,16 @@ class Enemy3(Enemy):
 
         if self.is_close(player):
             if player.xcor()<self.xcor():
-                self.direction="left"
+                self.direction = Direction.left
 
             elif player.xcor()>self.xcor():
-                self.direction="right"
+                self.direction = Direction.right
 
             elif player.ycor()<self.ycor():
-                self.direction="down"
+                self.direction = Direction.down
 
             elif player.ycor()>self.ycor():
-                self.direction="up"
+                self.direction = Direction.up
                                                                         
             
         # Calculate the spot to move to 
@@ -262,7 +263,7 @@ class Enemy3(Enemy):
         if (move_to_x, move_to_y) not in walls:
             self.goto(move_to_x, move_to_y)
         else:
-            self.direction=random.choice(["up","down","left", "right"])
+            self.direction = Direction.random()
 
         turtle.ontimer(self.move,t=random.randint(150,300))
 
@@ -275,7 +276,7 @@ class Enemy4(Enemy):
         self.exp= 20
         self.speed(0)
         self.goto(x,y)
-        self.direction=random.choice(["up","down","left","right"])
+        self.direction = Direction.random()
         self.hp=300
         self.damage=50
         self.boss=0
@@ -292,25 +293,25 @@ class Enemy4(Enemy):
             return False
 
     def move(self):
-        if self.direction =="up":
+        if self.direction == Direction.up:
             dx= 0
             dy= 24
             self.shape(".\\art\\ghostback.gif")
             
             
-        elif self.direction =="down":
+        elif self.direction == Direction.down:
             dx= 0
             dy= -24
             self.shape(".\\art\\ghost.gif")
             
           
-        elif self.direction =="left":
+        elif self.direction == Direction.left:
             dx= -24
             dy= 0
             self.shape(".\\art\\ghost.gif")
             
 
-        elif self.direction =="right":
+        elif self.direction == Direction.right:
             dx= 24
             dy= 0
             self.shape(".\\art\\ghost.gif")
@@ -323,16 +324,16 @@ class Enemy4(Enemy):
 
         if self.is_close(player):
             if player.xcor()<self.xcor():
-                self.direction="left"
+                self.direction = Direction.left
 
             elif player.xcor()>self.xcor():
-                self.direction="right"
+                self.direction = Direction.right
 
             elif player.ycor()<self.ycor():
-                self.direction="down"
+                self.direction = Direction.down
 
             elif player.ycor()>self.ycor():
-                self.direction="up"
+                self.direction = Direction.up
                                                                         
             
         # Calculate the spot to move to 
@@ -342,7 +343,7 @@ class Enemy4(Enemy):
         if (move_to_x, move_to_y) not in walls:
             self.goto(move_to_x, move_to_y)
         else:
-            self.direction=random.choice(["up","down","left", "right"])
+            self.direction = Direction.random()
 
         turtle.ontimer(self.move,t=random.randint(150,300))
 
