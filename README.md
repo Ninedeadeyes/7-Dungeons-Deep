@@ -3,7 +3,8 @@
 
 Made Attempt to modularize the game. Originally all code is within game.py. Click on game(mod version).py to run modulated version. 
 
-Thanks to SauceChord to modularizing the 'Enemy' class which I had issues with performance. I have uploaded his version within 'SauceChord'. 
+Thanks to SauceChord to modularizing the 'Enemy' class which I had issues with performance. I have uploaded his version within 'SauceChord'
+whilst ' misc' was my failed attempt. 
 
 Key features
 
