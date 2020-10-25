@@ -3,12 +3,9 @@
 
 Made Attempt to modularize the game. Originally all code is within game.py. Click on game(mod version).py to run modulated version. 
 
-Even though Enemies can be modulated with  turtle.ontimer(lambda: self.move(block,bob),t=random.randint(100,300))
+Thanks to SauceChord to modularizing the 'Enemy' class which I had issues with performance.
 
-it has impacted performance of the game hence I left it alone. I have put it in the 'misc' folder if anyone want to have 
-a look. ( modulated enemy class before player class hence to run game, use files in the folder) 
 
-If anyone can help modulate Enemy Class without effecting performance, it would be appreciative  
 
 Key features
 
