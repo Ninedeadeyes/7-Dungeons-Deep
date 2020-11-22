@@ -4,7 +4,7 @@ import winsound
 
 
 class Missile(turtle.Turtle):
-    def __init__(self,startx, starty,log):
+    def __init__(self,startx, starty,myself):
         turtle.Turtle.__init__(self)
         self.speed = 3
         self.fd(10)
@@ -35,15 +35,15 @@ class Missile(turtle.Turtle):
             return False
             
 
-    def fire(self,log,mom):
+    def fire(self,myself,bug):
          if self.status == "ready":
-            self.goto(log.xcor(), log.ycor())
-            self.setheading(log.heading())
+            self.goto(myself.xcor(), myself.ycor())
+            self.setheading(myself.heading())
             self.status = "firing"
-            if mom != 3:
+            if bug != 3:
                 winsound.PlaySound(".\\sound\\swing.wav", winsound.SND_ASYNC)     
             
-    def move(self,log,block):
+    def move(self,myself,block):
     
         if self.status == "ready":
             self.goto(-2456, 3422)
@@ -56,22 +56,22 @@ class Missile(turtle.Turtle):
         #Border check
 
 
-        if  self.is_far(log):
-            self.setheading(log.heading())
+        if  self.is_far(myself):
+            self.setheading(myself.heading())
             self.status = "ready"               
         
           
         if self.xcor() < -400 or self.xcor() > 400 or \
             self.ycor()< -400 or self.ycor()> 400:
-            self.setheading(log.heading())
+            self.setheading(myself.heading())
             self.status = "ready"
 
         if (self.xcor(), self.ycor()) in block:           
-            self.setheading(log.heading())
+            self.setheading(myself.heading())
             self.status = "ready"
             
 class Missile2(turtle.Turtle):
-    def __init__(self,startx, starty,log):
+    def __init__(self,startx, starty,myself):
         turtle.Turtle.__init__(self)
         self.shape(".\\art\\fire.gif")
         self.speed = 3
@@ -103,16 +103,16 @@ class Missile2(turtle.Turtle):
             return False
             
 
-    def fire(self,log,mom):
+    def fire(self,myself,bug):
          if self.status == "ready":
-            self.goto(log.xcor(), log.ycor())
-            self.setheading(log.heading())
+            self.goto(myself.xcor(), myself.ycor())
+            self.setheading(myself.heading())
             self.status = "firing"
-            if mom != 3:
+            if bug != 3:
                 winsound.PlaySound(".\\sound\\fireball.wav", winsound.SND_ASYNC)
 
             
-    def move(self,log,block):
+    def move(self,myself,block):
     
         if self.status == "ready":
             self.goto(-2456, 3422)
@@ -124,17 +124,17 @@ class Missile2(turtle.Turtle):
         #Border check
 
 
-        if self.is_far(log):
-            self.setheading(log.heading())
+        if self.is_far(myself):
+            self.setheading(myself.heading())
             self.status = "ready"               
         
           
         if self.xcor() < -400 or self.xcor() > 400 or \
             self.ycor()< -400 or self.ycor()> 400:
-            self.setheading(log.heading())
+            self.setheading(myself.heading())
             self.status = "ready"
 
         if (self.xcor(), self.ycor()) in block:           
-            self.setheading(log.heading())
+            self.setheading(myself.heading())
             self.status = "ready"
 
