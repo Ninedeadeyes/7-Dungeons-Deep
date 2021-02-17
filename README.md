@@ -1,7 +1,7 @@
 
 29/09/2020
 
-Made Attempt to modularize the game. Download 'My Modularize version' and place all folders in same folder as art and sound and then click game(mod version)  
+Made Attempt to modularize the game. Download 'My Modularised version' and place all folders in same folder as art and sound and then click game(mod version)  
 
 Thanks to SauceChord to modularizing the 'Enemy' class which I had issues with performance. I have uploaded his version within 'SauceChord'
 whilst ' misc' was my failed attempt to modularize 'Enemy'. 
