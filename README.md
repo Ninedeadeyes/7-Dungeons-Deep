@@ -2,7 +2,7 @@
 29/09/2020
 
 
-Thanks to SauceChord who modularize my game. I had some issues with performance. I have uploaded his version within 'SauceChord'folder.  
+Thanks to SauceChord who modularize my game. My modularize version had some issues with performance. I have uploaded his version within 'SauceChord'folder.  
 
 Key features
 
