@@ -33,7 +33,7 @@ Special Thanks to Christian Thompson ( Youtuber)
 
 based of the Maze Game Tutorial 
 
-https://www.youtube.com/watch?v=-0q_miviUDs&ab_channel=TokyoEdtech
+https://youtu.be/gLtQyTF1yX8
 
 
 
