@@ -4,21 +4,6 @@
 
 Thanks to SauceChord who modularize my game. My modularize version had some issues with performance. I have uploaded his version within 'SauceChord'folder.  
 
-Key features
-
--Leveling system
-
--Item pick ups/Equipment upgrade
-
--Hidden Locations 
-
--Side Quests 
-
--Variety of enemies ( including boss ) 
-
--Alternative ending 
-
-
 -All graphics created using GraphicsGale and lospec.com/pixel-editor
 
 -All sounds downloaded from https://freesound.org
