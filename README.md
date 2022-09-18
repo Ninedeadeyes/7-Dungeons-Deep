@@ -35,5 +35,18 @@ based of the Maze Game Tutorial
 
 https://youtu.be/gLtQyTF1yX8
 
+My version contain additional features such as
+
+1) Levelling system 
+2) Side Quests
+3) Ending including alternative ending 
+4) Multiple dungeons
+5) Real time combat system 
+6) Hidden locations
+7) Variety of enemies ( including boss) 
+8) Item pick ups/Equipment upgrade
+9) Sound effects and music from freesound.org 
+10) Starting Screen 
+
 
 
