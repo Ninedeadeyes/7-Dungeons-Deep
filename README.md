@@ -33,5 +33,6 @@ My version contain additional features such as
 9) Sound effects and music from freesound.org 
 10) Starting Screen 
 
+To be honest the maze game tutorial is more of a 'demo' than an actual game. 
 
 
