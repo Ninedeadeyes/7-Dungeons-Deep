@@ -387,13 +387,3 @@ class Info():
         self.pen3.color("white")         
         self.pen3.write(msg, font=("Arial", 16, "normal"))
 
-                
-
-    def lose(self):     #this is just experimenting , not in game
-        wn.clear()
-        wn.bgcolor("blue")
-        self.goto(0, 0)
-        self.color("white")
-        self.write("Sorry, you lose."'\n'  "Your xp: {} points".format(self.exp), False, align="center",
-                         font=("Arial", 16, "normal"))
-
