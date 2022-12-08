@@ -1,12 +1,8 @@
-
-
 import turtle
 import math
 import random
 import time
 import winsound
-
-
 
 images=[".\\art\\wall.gif",".\\art\\orkleft.gif",".\\art\\ork.gif",".\\art\\orkup.gif",".\\art\\gold.gif",".\\art\\fire.gif",".\\art\\door.gif",".\\art\\orkright.gif",".\\art\\arrowup.gif",
         ".\\art\\arrowdown.gif",".\\art\\arrowright.gif",".\\art\\arrowleft.gif",".\\art\\heroleft.gif",".\\art\\heroright.gif",".\\art\\herodown.gif",".\\art\\heroup.gif",".\\art\\fire.gif",
@@ -14,10 +10,8 @@ images=[".\\art\\wall.gif",".\\art\\orkleft.gif",".\\art\\ork.gif",".\\art\\orku
         ,".\\art\\npc.gif",".\\art\\tree.gif",".\\art\\rock.gif",".\\art\\background.gif",".\\art\\black.gif",".\\art\\bossdown.gif",".\\art\\bossright.gif",".\\art\\bossleft.gif",".\\art\\bossup.gif",
         ".\\art\\ghost.gif",".\\art\\ghostback.gif",".\\art\\cage.gif",".\\art\\key.gif",".\\art\\capture.gif",".\\art\\sword.gif",".\\art\\crown.gif",".\\art\\Image2.gif"]
 
-
 for image in images:
     turtle.register_shape(image)
-
 
 #intro screen
 #------------------------------
@@ -38,7 +32,7 @@ tn.write("Loading...",move=False,align="center",font=("Times",20,"bold"))
 tn.goto(10,-300)
 tn.write("WASD = To attack,  Arrowkeys = To move,  Spacebar = Drink healing potion,  Z = Use fireball scroll ",move=False,align="center",font=("Times",15,"bold"))
 tn.goto(10,-350)
-tn.write("Music/Sound from Freesound.org        Art/Programming by Tommy Kwong",move=False,align="center",font=("Times",15,"bold"))
+tn.write("Sound Effects from Freesound.org      Art / Music / Programming by Tommy Kwong",move=False,align="center",font=("Times",15,"bold"))
 
 
 
@@ -48,10 +42,8 @@ pn.tracer(0)
 pn.clear()
 tn.clear()
 
-
 #main screen 
 #---------------------------------------------------------
-
 
 wn = turtle.Screen()
 wn.bgcolor("black")
@@ -59,14 +51,6 @@ wn.title("7 Dungeons Deep (7DD)")
 wn.setup(1900,930)
 wn.bgpic(".\\art\\background.gif")
 wn.tracer(0)
-
-
-
-
-
-
-
-
 
 class Info():
     def __init__(self):
@@ -128,7 +112,6 @@ class Info():
         self.pen.rt(90)
         self.pen.fd(121)
             
-            
         self.pen.penup()
         self.pen.ht()
         self.pen.pendown()
@@ -143,14 +126,11 @@ class Info():
         self.pen9.pendown()
         self.pen9.rt(90)
         self.pen9.fd(121)
-            
-            
+                      
         self.pen9.penup()
         self.pen9.ht()
         self.pen9.pendown()
-
-    
-        
+       
     def show_gold(self):
         self.pen9.undo()
         self.pen9.ht()
@@ -159,8 +139,6 @@ class Info():
         self.pen9.goto(-400, 325)
         self.pen9.write(msg, font=("Arial", 16, "normal"))
         
-
-
     def show_rules(self):
         msg = ("Controls: W,A,S,D Arrow Keys, Spacebar = Potion, Z = Magic  ")
         self.pen.penup()
@@ -172,10 +150,10 @@ class Info():
      
 
     def win(self):
-
-        
+     
         if player.kill==0:    # If player does not kill anything is given an alternative ending 
 
+            winsound.PlaySound(".\\sound\\victory.wav",winsound.SND_LOOP + winsound.SND_ASYNC | winsound.SND_ALIAS )
             msg= (""" 
             You found the Crown of Yendor.
             The world is saved. You smile
@@ -185,8 +163,9 @@ class Info():
             self.pen.penup()
             self.pen.goto(-120,304)
             self.pen.write(msg, font=("Arial", 16, "normal"))
-            winsound.PlaySound(".\\sound\\victory.wav",0)
             self.pen.undo()
+            time.sleep(4)
+        
 
             msg= (""" 
             A peaceful solution.
@@ -196,10 +175,9 @@ class Info():
                    """)
             self.pen.write(msg, font=("Arial", 16, "normal"))
 
-
         else:
 
-            
+            winsound.PlaySound(".\\sound\\ending.wav",winsound.SND_LOOP + winsound.SND_ASYNC | winsound.SND_ALIAS )
             msg= (""" 
             You found the Crown of Yendor.
             Even though the world is saved
@@ -209,7 +187,7 @@ class Info():
             self.pen.penup()
             self.pen.goto(-120,304)
             self.pen.write(msg, font=("Arial", 16, "normal"))
-            winsound.PlaySound(".\\sound\\victory.wav",0)
+            time.sleep(4)
             self.pen.undo()
             
             
@@ -220,7 +198,7 @@ class Info():
             for or something else ?      
                    """)
             self.pen.write(msg, font=("Arial", 16, "normal"))
-            winsound.PlaySound(".\\sound\\ending.wav",0)
+            time.sleep(4)
             self.pen.undo()
 
 
@@ -230,10 +208,6 @@ class Info():
                       
                    """)
             self.pen.write(msg, font=("Arial", 16, "normal"))
-
-        
-              
-
 
     def start(self):
     
@@ -291,8 +265,6 @@ class Info():
         time.sleep(2)
         self.pen.undo()
         
-
-
     def intro(self):
     
         msg= (""" 
@@ -305,8 +277,7 @@ class Info():
         self.pen.write(msg, font=("Arial", 16, "normal"))
         time.sleep(2)
         self.pen.undo()
-        
-        
+           
         msg= (""" 
               Find the Crown of Yendor to save
               the world from IMPENDING DOOM 
@@ -325,8 +296,6 @@ class Info():
         time.sleep(2)
         self.pen.undo()
         
-    
-
     def dead(self):
         msg= (""" 
                         (Game Over)    
@@ -354,8 +323,6 @@ class Info():
         self.pen2.goto(-410,385)
         self.pen2.color("white")         
         self.pen2.write(msg, font=("Arial", 16, "normal"))
-
-
 
     def show_defense(self):
         self.pen7.undo()
@@ -422,7 +389,6 @@ class Info():
         self.pen3.color("white")         
         self.pen3.write(msg, font=("Arial", 16, "normal"))
 
-                
 
     def lose(self):     #this is just experimenting , not in game
         wn.clear()
@@ -432,8 +398,7 @@ class Info():
         self.write("Sorry, you lose."'\n'  "Your xp: {} points".format(self.exp), False, align="center",
                          font=("Arial", 16, "normal"))
 
-        
-
+    
 class Missile(turtle.Turtle):
     def __init__(self,startx, starty):
         turtle.Turtle.__init__(self)
@@ -464,7 +429,6 @@ class Missile(turtle.Turtle):
         else:
             return False
             
-
     def fire(self):
          if self.status == "ready":
             self.goto(player.xcor(), player.ycor())
@@ -472,10 +436,7 @@ class Missile(turtle.Turtle):
             self.status = "firing"
             if lives != 3:                # prevent annoying ending sound bug 
                 winsound.PlaySound(".\\sound\\swing.wav", winsound.SND_ASYNC)   
-
-
-           
-            
+     
     def move(self):
     
         if self.status == "ready":
@@ -542,10 +503,7 @@ class Missile2(turtle.Turtle):
             self.status = "firing"
             if lives != 3:
                 winsound.PlaySound(".\\sound\\fireball.wav", winsound.SND_ASYNC)
-
-
-           
-            
+          
     def move(self):
     
         if self.status == "ready":
@@ -571,9 +529,6 @@ class Missile2(turtle.Turtle):
         if (self.xcor(), self.ycor()) in walls:           
             self.setheading(player.heading())
             self.status = "ready"
-
-
-
 
 
 class Pen(turtle.Turtle):
@@ -673,8 +628,6 @@ class Player(turtle.Turtle):
         missile.shape(".\\art\\arrowdown.gif")
         missile.fire()
 
-
-
     def headleft(self):
 
         if self.left==1:
@@ -729,11 +682,6 @@ class Player(turtle.Turtle):
         missile.shape(".\\art\\arrowup.gif")
         missile.fire()
             
-
-
-
-         
-
     def go_up(self):
 
         if self.up==1:
@@ -765,9 +713,7 @@ class Player(turtle.Turtle):
         
         if (move_to_x, move_to_y) not in walls:
             self.goto(move_to_x, move_to_y)
-            
-      
-        
+                  
     def go_down(self):
 
         if self.down==1:
@@ -792,15 +738,12 @@ class Player(turtle.Turtle):
             self.right=0
             self.down=1
 
-
-        
         move_to_x = self.xcor()
         move_to_y = self.ycor()-24
         self.shape(".\\art\\herodown.gif")
         
         if (move_to_x, move_to_y) not in walls:
             self.goto(move_to_x, move_to_y)
-        
         
     def go_left(self):
 
@@ -831,10 +774,7 @@ class Player(turtle.Turtle):
         
         if (move_to_x, move_to_y) not in walls :
             self.goto(move_to_x, move_to_y)
-
-
-        
-        
+  
     def go_right(self):
 
         if self.right==1:
@@ -861,10 +801,7 @@ class Player(turtle.Turtle):
         
         if (move_to_x, move_to_y) not in walls:
             self.goto(move_to_x, move_to_y)
-
-
-
-            
+        
     def drink(self):
         
         
@@ -918,7 +855,6 @@ class Player(turtle.Turtle):
         self.goto(500,500)
         self.hideturtle()
 
-
 class Item(turtle.Turtle):
     def __init__(self,x,y):
         turtle.Turtle.__init__(self)
@@ -932,9 +868,6 @@ class Item(turtle.Turtle):
     def destroy(self):
         self.goto(1998,1998)
         self.hideturtle()
-
-
-
 
 class Crown(Item):                     # just to inherit 'destroy' function from Item to be honest 
     def __init__(self,x,y):
@@ -959,9 +892,6 @@ class Healing (Item):
         self.penup()
         self.goto(x,y)
 
-
-
-
 class Fake_wall (Item):
     def __init__(self,x,y):
         turtle.Turtle.__init__(self)
@@ -970,7 +900,6 @@ class Fake_wall (Item):
         self.penup()
         self.goto(x,y)
 
-
 class Npc (Item):
     def __init__(self,x,y):
         turtle.Turtle.__init__(self)
@@ -978,7 +907,6 @@ class Npc (Item):
         self.color("red")
         self.penup()
         self.goto(x,y)
-
 
 class Quest (Item):
     def __init__(self,x,y):
@@ -1005,8 +933,6 @@ class Quest_item (Item):
         self.penup()
         self.goto(x,y)
 
-
-
 class Armour (Item):
     def __init__(self,x,y):
         turtle.Turtle.__init__(self)
@@ -1032,8 +958,7 @@ class Firescroll (Item):
         self.color("yellow")
         self.penup()
         self.goto(x,y)
-        
-        
+          
 class Coin(Item):
     def __init__(self,x,y):
         turtle.Turtle.__init__(self)
@@ -1068,7 +993,6 @@ class Enemy(Item):
         self.damage=15
         self.alive = True
 
-
     def is_close(self,other):
         a = self.xcor()- other.xcor()
         b = self.ycor()- other.ycor()
@@ -1079,8 +1003,6 @@ class Enemy(Item):
         else:
             return False
                 
-
-
     def move(self):
         if self.direction =="up":
             dx= 0
@@ -1158,8 +1080,6 @@ class Enemy2(Enemy):
         else:
             return False
 
-
-
     def move(self):
         if self.direction =="up":
             dx= 0
@@ -1214,8 +1134,6 @@ class Enemy2(Enemy):
             self.direction=random.choice(["up","down","left", "right"])
 
         turtle.ontimer(self.move,t=random.randint(100,200))
-
-
 
 class Enemy3(Enemy):
     def __init__(self,x,y):
@@ -1407,8 +1325,6 @@ class Particle(Item):
         if self.frame > 15:
             self.frame = 0
             self.goto(-1000, -1000)
-
-
 
 particles = []
 
@@ -1706,8 +1622,6 @@ level_8 =[
 
 ]
 
-
-
 levels.append(level_1)
 levels.append(level_2)
 levels.append(level_3)
@@ -1767,10 +1681,7 @@ def setup_maze(level):
                 pen.stamp()
                 walls.append((screen_x,screen_y))
 
-
-
-
-            
+ 
             if character == "P":   # p= player 
                 player.goto(screen_x, screen_y)
 
@@ -1829,7 +1740,6 @@ player= Player()
 missile = Missile(0, 0)
 missile2 = Missile2(0, 0)
 
-
 setup_maze(levels[1])
 maze=("level1")
 
@@ -1851,10 +1761,6 @@ info.show_fire_scroll()
 info.show_exp()
 info.show_defense()
 
-
-
-
-
 #keyboard binding
 
 turtle.listen()
@@ -1874,13 +1780,10 @@ turtle.onkey(player.drink,"space")
 turtle.onkey(player.fireball,"z")
 turtle.onkey(player.fireball,"Z")
 
-
 for enemy in enemies:
     turtle.ontimer(enemy.move,t=250)
 
       #(experiementing with inputs within game ) 
-
-
 
 while True:
 
@@ -1951,9 +1854,6 @@ while True:
             winsound.PlaySound(".\\sound\\key.wav", winsound.SND_ASYNC)
         
                             
-
-
- 
     for sword in swords:
 
         if player.is_collision(sword):
@@ -1977,10 +1877,6 @@ while True:
                 winsound.PlaySound(".\\sound\\sword.wav", winsound.SND_ASYNC)
 
 
-
-
-
-
     for firescroll in firescrolls:
 
         if player.is_collision(firescroll):
@@ -2000,9 +1896,6 @@ while True:
             info.show_healthpotion()
             winsound.PlaySound(".\\sound\\potion.wav", winsound.SND_ASYNC)
         
-
-        
-
     for crown in crowns:
         
         if player.is_collision(crown):
@@ -2014,9 +1907,6 @@ while True:
             lives=3             # prevent annoying ending bug where you can hear attack button. 
             game.win()
             
-            
-                 
-
     for enemy in enemies:
         if missile.is_collision(enemy):
             enemy.hp -= (player.strength+player.weaponstats)
@@ -2139,9 +2029,7 @@ while True:
                 winsound.PlaySound(".\\sound\\levelup.wav", winsound.SND_ASYNC) 
                 time.sleep(1)
 
-                               
-                               
-            
+                         
     for coin in coins:
         if player.is_collision(coin):
             player.gold += coin.gold
@@ -2164,11 +2052,6 @@ while True:
             for particle in particles:
                 particle.explode(player.xcor(), player.ycor())
 
-            
-            
-
-       
-            
 
     for door in doors:
         if player.is_collision(door):
@@ -2199,10 +2082,7 @@ while True:
                 Fake_wall.destroy(fake_wall)
             for quest2 in quests2:
                 Quest2.destroy(quest2)
-                
-            
-
-                
+                  
             winsound.PlaySound(".\\sound\\unlock.wav", winsound.SND_ASYNC)
     
             
@@ -2237,26 +2117,21 @@ while True:
             elif maze==("level7"):
                 setup_maze(levels[8])
                 maze=("level8")
-            
-                   
+                     
             else:
                 pass
-
-            
-             
+                   
             for enemy in enemies:
                 turtle.ontimer(enemy.move,t=250)
     
     if player.hp<=0:
+        winsound.PlaySound(".\\sound\\death.wav", winsound.SND_ASYNC)
         game.dead()
         player.destroy()
-        winsound.PlaySound(".\\sound\\death.wav", winsound.SND_ASYNC)
-        time.sleep(2)
+        time.sleep(4)
         info.show_health()
         break
-       
-
+    
     wn.update()
         
  #https://github.com/Ninedeadeyes/7-Dungeons-Deep
-
