@@ -1,12 +1,16 @@
 
-29/09/2020
+08/12/2022
 
 
 Thanks to SauceChord who modularize my game. My modularize version had some issues with performance. I have uploaded his version within 'SauceChord'folder.  
 
 -All graphics created using GraphicsGale and lospec.com/pixel-editor
 
--All sounds downloaded from https://freesound.org
+- Music for the unmodularize version created using BeepBox
+
+- Music for the modularize vesion downloaded from  https://freesound.org
+
+-All Sound Effects downloaded from https://freesound.org
 
 -To play without python download all files and run the exe file.
 
@@ -32,6 +36,7 @@ My version contain additional features such as
 8) Item pick ups/Equipment upgrade
 9) Sound effects and music from freesound.org 
 10) Starting Screen 
+11) Original Music and Art 
 
 To be honest the maze game tutorial is more of a 'demo' than an actual game. 
 
