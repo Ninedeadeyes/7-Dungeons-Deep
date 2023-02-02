@@ -40,4 +40,6 @@ My version contain additional features such as
 
 To be honest the maze game tutorial is more of a 'demo' than an actual game. 
 
+Check out my other Python Games at 
 
+https://ninedeadeyes.github.io/Python-Game-Gallery/
