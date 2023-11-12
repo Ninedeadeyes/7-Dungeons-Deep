@@ -43,3 +43,8 @@ To be honest the maze game tutorial is more of a 'demo' than an actual game.
 Check out my other Python Games at 
 
 https://ninedeadeyes.github.io/Python-Game-Gallery/
+
+
+*Most virus checker will think that the exe is a virus but it is just the way it was converted using pyinstaller.
+
+https://stackoverflow.com/questions/43777106/program-made-with-pyinstaller-now-seen-as-a-trojan-horse-by-avg
