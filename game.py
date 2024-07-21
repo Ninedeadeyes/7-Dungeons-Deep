@@ -54,6 +54,7 @@ wn.tracer(0)
 
 class Info():
     def __init__(self):
+        self.screen= turtle.Screen()
         self.pen = turtle.Turtle()
         self.pen2 = turtle.Turtle()
         self.pen3 = turtle.Turtle()
@@ -63,6 +64,7 @@ class Info():
         self.pen7 = turtle.Turtle()
         self.pen8 = turtle.Turtle()
         self.pen9 = turtle.Turtle()
+        self.screen.tracer(0)
         
         
     def draw_border(self):
@@ -163,8 +165,9 @@ class Info():
             self.pen.penup()
             self.pen.goto(-120,304)
             self.pen.write(msg, font=("Arial", 16, "normal"))
-            self.pen.undo()
+            self.screen.update()
             time.sleep(4)
+            self.pen.undo()
         
 
             msg= (""" 
@@ -187,6 +190,7 @@ class Info():
             self.pen.penup()
             self.pen.goto(-120,304)
             self.pen.write(msg, font=("Arial", 16, "normal"))
+            self.screen.update()
             time.sleep(4)
             self.pen.undo()
             
@@ -198,6 +202,7 @@ class Info():
             for or something else ?      
                    """)
             self.pen.write(msg, font=("Arial", 16, "normal"))
+            self.screen.update()
             time.sleep(4)
             self.pen.undo()
 
@@ -220,7 +225,8 @@ class Info():
         self.pen.penup()
         self.pen.goto(-120,304)
         self.pen.write(msg, font=("Arial", 16, "normal"))
-        time.sleep(.2)
+        self.screen.update()
+        time.sleep(1)
         self.pen.undo()
 
 
@@ -234,7 +240,8 @@ class Info():
         self.pen.penup()
         self.pen.goto(-120,304)
         self.pen.write(msg, font=("Arial", 16, "normal"))
-        time.sleep(.2)
+        self.screen.update()
+        time.sleep(1)
         self.pen.undo()
 
 
@@ -249,6 +256,7 @@ class Info():
         self.pen.penup()
         self.pen.goto(-120,304)
         self.pen.write(msg, font=("Arial", 16, "normal"))
+        self.screen.update()
         time.sleep(2)
         self.pen.undo()
 
@@ -262,6 +270,7 @@ class Info():
         self.pen.penup()
         self.pen.goto(-120,304)
         self.pen.write(msg, font=("Arial", 16, "normal"))
+        self.screen.update()
         time.sleep(2)
         self.pen.undo()
         
@@ -275,6 +284,7 @@ class Info():
         self.pen.penup()
         self.pen.goto(-120,304)
         self.pen.write(msg, font=("Arial", 16, "normal"))
+        self.screen.update()
         time.sleep(2)
         self.pen.undo()
            
@@ -284,6 +294,7 @@ class Info():
                   
                """)
         self.pen.write(msg, font=("Arial", 16, "normal"))
+        self.screen.update()
         time.sleep(2)
         self.pen.undo()
 
@@ -293,6 +304,7 @@ class Info():
  
                """)
         self.pen.write(msg, font=("Arial", 16, "normal"))
+        self.screen.update()
         time.sleep(2)
         self.pen.undo()
         
@@ -305,6 +317,8 @@ class Info():
         self.pen.penup()
         self.pen.goto(-120,304)
         self.pen.write(msg, font=("Arial", 16, "normal"))
+        self.screen.update()
+
         
     def show_health(self):
         self.pen.undo()
@@ -1818,9 +1832,10 @@ while True:
 
     for npc in npcs:
 
-        if player.is_collision(npc):          
-            game.intro()         
+        if player.is_collision(npc):                   
+            game.intro()
             Npc.destroy(npc)
+
                 
     for quest in quests:
 
